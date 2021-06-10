@@ -4,13 +4,11 @@ const router = express.Router();
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
 const Transport = require('../config/transport');
 
-
-router.post('/register/test', async(req, res)=>{
-  res.statusCode(200)
-})
+router.get('/register/users', function (req, res, next) {
+  return res.json('all users sent');
+});
 
 router.post('/register', async (req, res) => {
   const username = req.body.username;
@@ -51,7 +49,7 @@ router.post('/register', async (req, res) => {
               });
             }
           );
-          res.sendStatus(200)
+
           console.log('user added');
         }
       }
