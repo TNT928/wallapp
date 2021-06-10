@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.container form textarea {
+  height: 10em;
+  margin-bottom: 30px;
+}
+
+.container form button {
+  background-color: green;
+  height: 3em;
+  font-size: 25px;
+  color: white;
+  border-radius: 15px;
+  width: 25%;
+  margin: 0 auto;
+}
