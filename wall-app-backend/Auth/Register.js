@@ -6,11 +6,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Transport = require('../config/transport');
 
-router.get('/register/users', function (req, res, next) {
-  return res.json('all users sent');
-});
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   const username = req.body.username;
   const password = await bcrypt.hashSync(req.body.password, 10);
   const email = req.body.email;
@@ -51,6 +48,7 @@ router.post('/register', async (req, res) => {
           );
 
           console.log('user added');
+          return res.status(200)
         }
       }
     );

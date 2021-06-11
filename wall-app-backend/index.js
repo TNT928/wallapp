@@ -13,7 +13,7 @@ const login = require('./Auth/Login')
 const posts = require('./Routes/Post')
 const verifyEmail = require('./Auth/VerifyEmail')
 
-app.use('/', register)
+app.use('/register', register)
 app.use('/', login)
 app.use('/', posts)
 app.use('/', verifyEmail)

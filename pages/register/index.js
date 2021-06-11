@@ -2,6 +2,10 @@ import {useContext, useState} from 'react';
 import Layout from '../../components/Layout';
 import AuthContext from '../../context/AuthContext';
 import styles from '../../styles/Form.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function Register() {
   const {register} = useContext(AuthContext);
@@ -14,10 +18,12 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     register({username, password, email});
+    toast.success('Registration compelte, please check your email to verify!')
   };
 
   return (
     <Layout>
+    <ToastContainer/>
       <div className={styles.formContainer}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
